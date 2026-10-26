@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Mahasiswa Pendidikan Teknologi Informasi</title>
+  <title>Portofolio | Rafael Ahmad Davino Widiyonarko</title>
 
-  <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
 
   <style>
     :root {
-      --bg-base: #030407;
-      --card-bg: rgba(14, 17, 27, 0.58);
-      --card-inner: rgba(8, 10, 18, 0.75);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-border-hover: rgba(168, 85, 247, 0.45);
-      --accent-violet: #a855f7;
-      --accent-cyan: #06b6d4;
-      --accent-emerald: #10b981;
-      --text-main: #f8fafc;
+      --bg-base: #090b10;
+      --card-bg: rgba(18, 22, 31, 0.78);
+      --card-inner: #121722;
+      --card-border: rgba(255, 255, 255, 0.07);
+      --card-border-hover: rgba(229, 192, 123, 0.35);
+      --accent-gold: #e5c07b;
+      --accent-emerald: #34d399;
+      --text-main: #f1f5f9;
       --text-muted: #94a3b8;
       --font-body: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'Fira Code', monospace;
@@ -34,18 +38,23 @@
       scroll-behavior: smooth;
     }
 
+    html,
     body {
+      max-width: 100%;
+      overflow-x: hidden;
       background-color: var(--bg-base);
       color: var(--text-main);
       font-family: var(--font-body);
       line-height: 1.6;
-      padding-top: 100px;
-      position: relative;
-      overflow-x: hidden;
     }
 
-    /* Animated Aurora Background */
-    .aurora-container {
+    body {
+      padding-top: 96px;
+      position: relative;
+    }
+
+    /* Cahaya Latar Lembut */
+    .ambient-light {
       position: fixed;
       inset: 0;
       z-index: -2;
@@ -53,88 +62,66 @@
       pointer-events: none;
     }
 
-    .aurora-blob {
+    .light-orb-1 {
       position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.38;
-      animation: auroraMove 22s infinite alternate ease-in-out;
-    }
-
-    .blob-violet {
-      width: 650px;
-      height: 550px;
-      background: radial-gradient(circle, #7e22ce 0%, #3b0764 70%);
-      top: -100px;
-      left: 15%;
-      animation-duration: 24s;
-    }
-
-    .blob-cyan {
       width: 600px;
       height: 500px;
-      background: radial-gradient(circle, #0284c7 0%, #082f49 75%);
-      top: 35%;
-      right: 5%;
-      animation-duration: 28s;
-      animation-delay: -5s;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.1) 0%, transparent 70%);
+      top: -120px;
+      left: 10%;
+      filter: blur(80px);
     }
 
-    .blob-emerald {
-      width: 500px;
+    .light-orb-2 {
+      position: absolute;
+      width: 550px;
       height: 450px;
-      background: radial-gradient(circle, #059669 0%, #022c22 80%);
-      bottom: -80px;
-      left: 25%;
-      animation-duration: 20s;
-      animation-delay: -10s;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.07) 0%, transparent 70%);
+      bottom: -100px;
+      right: 10%;
+      filter: blur(90px);
     }
 
-    @keyframes auroraMove {
-      0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-      50% { transform: translate(60px, 40px) scale(1.15) rotate(15deg); }
-      100% { transform: translate(-40px, 70px) scale(0.92) rotate(-15deg); }
-    }
-
-    /* Grid Pola Bersih & Aman dari Linter */
     .bg-grid-pattern {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
       background-size: 28px 28px;
       opacity: 0.5;
       z-index: -1;
       pointer-events: none;
     }
 
-    /* Floating Pill Navbar */
+    /* Navigasi */
     .nav-wrapper {
       position: fixed;
-      top: 20px;
+      top: 16px;
       left: 0;
       right: 0;
       display: flex;
       justify-content: center;
       z-index: 1000;
-      padding: 0 16px;
+      padding: 0 14px;
     }
 
     .navbar {
-      background: rgba(10, 12, 20, 0.65);
-      backdrop-filter: blur(20px);
+      background: rgba(13, 17, 24, 0.85);
+      backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
       border-radius: 999px;
       display: flex;
       align-items: center;
-      gap: 24px;
-      padding: 8px 16px 8px 12px;
+      gap: 16px;
+      padding: 8px 14px 8px 12px;
       max-width: 890px;
       width: 100%;
       justify-content: space-between;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
     }
 
     .nav-brand {
@@ -142,143 +129,133 @@
       align-items: center;
       gap: 10px;
       font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
+      font-size: 0.86rem;
+      letter-spacing: 0.4px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .nav-brand-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .nav-brand-badge {
       width: 30px;
       height: 30px;
-      background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
-      color: #ffffff;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent-gold), #b8860b);
+      color: #090b10;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.8rem;
-      box-shadow: 0 0 14px rgba(168, 85, 247, 0.5);
+      font-size: 0.82rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 20px;
       list-style: none;
+      flex-shrink: 0;
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 500;
       transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: #ffffff;
+      color: var(--accent-gold);
     }
 
     .nav-btn {
-      background: linear-gradient(135deg, #ffffff, #e2e8f0);
-      color: #050508;
-      padding: 7px 18px;
+      background: var(--accent-gold);
+      color: #090b10;
+      padding: 7px 16px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+      flex-shrink: 0;
+      transition: transform 0.2s, opacity 0.2s;
     }
 
     .nav-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 24px rgba(255, 255, 255, 0.35);
+      opacity: 0.92;
     }
 
     /* Container */
     .container {
       max-width: 1060px;
       margin: 0 auto;
-      padding: 50px 24px;
+      padding: 44px 20px;
+      width: 100%;
     }
 
     .section-eyebrow {
       text-transform: uppercase;
       font-size: 0.72rem;
-      letter-spacing: 2.5px;
-      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
       margin-bottom: 8px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .section-title {
-      font-size: 2.3rem;
+      font-size: 2.15rem;
       font-weight: 800;
-      margin-bottom: 26px;
-      line-height: 1.2;
+      margin-bottom: 24px;
+      line-height: 1.25;
       letter-spacing: -0.5px;
+      word-wrap: break-word;
     }
 
-    /* Glass Bento Box */
+    /* Kartu Bento */
     .bento-card {
       background: var(--card-bg);
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
-      border-radius: 22px;
-      padding: 24px;
+      border-radius: 20px;
+      padding: 26px;
       position: relative;
       overflow: hidden;
-      transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      min-width: 0;
+      width: 100%;
+      transition: border-color 0.25s, transform 0.25s;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
     }
 
     .bento-card:hover {
       border-color: var(--card-border-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(168, 85, 247, 0.15);
+      transform: translateY(-2px);
     }
 
-    /* Spotlight Glow */
-    .bento-card::before {
-      content: '';
-      position: absolute;
-      top: var(--mouse-y, -200px);
-      left: var(--mouse-x, -200px);
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.14) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      transition: opacity 0.3s;
-      opacity: 0;
-    }
-
-    .bento-card:hover::before {
-      opacity: 1;
-    }
-
-    /* 1. ABOUT ME SECTION */
+    /* 1. ABOUT ME (Tata Letak Menyamping / Horizontal) */
     .about-bento {
-      display: grid;
-      grid-template-columns: 320px 1.1fr 0.9fr;
-      grid-template-rows: auto auto;
-      gap: 18px;
-    }
-
-    .bento-profile {
-      grid-row: span 2;
       display: flex;
       flex-direction: column;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .bento-profile-horizontal {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
       align-items: center;
     }
 
     .avatar-wrapper {
       position: relative;
       width: 100%;
-      height: 290px;
-      margin-bottom: 18px;
+      height: 310px;
     }
 
     .profile-img {
@@ -292,11 +269,10 @@
 
     .status-badge {
       position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(10, 12, 20, 0.85);
+      bottom: 12px;
+      left: 12px;
+      background: rgba(13, 17, 24, 0.9);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(10px);
       padding: 5px 12px;
       border-radius: 999px;
       display: flex;
@@ -309,117 +285,175 @@
     .pulse-dot {
       width: 7px;
       height: 7px;
-      background: #22c55e;
+      background: var(--accent-emerald);
       border-radius: 50%;
-      box-shadow: 0 0 10px #22c55e;
-      animation: pulse 2s infinite;
+      box-shadow: 0 0 8px var(--accent-emerald);
     }
 
-    @keyframes pulse {
-      0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(1.2); }
-      100% { opacity: 1; transform: scale(1); }
+    .profile-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
     }
 
-    /* Format List Biodata */
-    .info-list {
-      width: 100%;
+    .profile-greeting {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .profile-bio {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    /* Kotak Identitas 2 Kolom */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
       background: var(--card-inner);
       border: 1px solid var(--card-border);
       border-radius: 14px;
-      padding: 14px 16px;
-      font-size: 0.82rem;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
     }
 
-    .info-row {
-      display: grid;
-      grid-template-columns: 68px 1fr;
-      align-items: baseline;
-      gap: 8px;
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
     }
 
     .info-label {
       color: var(--text-muted);
-      font-size: 0.78rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .info-val {
       color: #ffffff;
+      font-size: 0.86rem;
       font-weight: 600;
       word-break: break-word;
     }
 
-    .bento-intro {
-      grid-column: span 2;
-    }
-
-    .bento-terminal {
-      grid-column: span 1;
-      background: rgba(6, 8, 14, 0.85);
-      border: 1px solid var(--card-border);
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      padding: 18px;
-      border-radius: 16px;
-      overflow-x: auto;
-    }
-
-    .terminal-header {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-
-    .term-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-    }
-    .term-red { background: #ef4444; }
-    .term-yellow { background: #eab308; }
-    .term-green { background: #22c55e; }
-
-    .term-text {
-      color: #94a3b8;
-      line-height: 1.6;
-    }
-    .term-text .comment { color: #475569; }
-    .term-text .key { color: var(--accent-violet); }
-    .term-text .val { color: var(--accent-cyan); }
-
-    .bento-stats {
-      grid-column: span 1;
+    /* Baris Statistik 3 Kolom */
+    .bento-stats-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 100%;
     }
 
     .stat-box {
-      background: var(--card-inner);
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 16px;
+      border-radius: 18px;
+      padding: 20px;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-width: 0;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .stat-box:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-2px);
     }
 
     .stat-box h3 {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-weight: 800;
       color: #ffffff;
+      line-height: 1.2;
     }
 
     .stat-box p {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       text-transform: uppercase;
-      margin-top: 4px;
-      letter-spacing: 0.5px;
+      margin-top: 6px;
+      letter-spacing: 0.8px;
+    }
+
+    /* Riwayat Pendidikan */
+    .edu-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .edu-header-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-size: 1rem;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .edu-item {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: border-color 0.25s;
+    }
+
+    .edu-item:hover {
+      border-color: var(--card-border-hover);
+    }
+
+    .edu-year {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--accent-gold);
+      background: rgba(229, 192, 123, 0.1);
+      border: 1px solid rgba(229, 192, 123, 0.22);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .edu-school {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .edu-major {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--accent-emerald);
+      margin-bottom: 8px;
+    }
+
+    .edu-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
 
     /* 2. WHAT I CAN DO */
@@ -427,6 +461,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
+      width: 100%;
     }
 
     .cap-header {
@@ -438,9 +473,9 @@
 
     .cap-num {
       font-family: var(--font-mono);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--accent-violet);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent-gold);
     }
 
     .cap-icon {
@@ -452,8 +487,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-cyan);
-      font-size: 1.1rem;
+      color: var(--accent-gold);
+      font-size: 1.05rem;
     }
 
     .tag-cloud {
@@ -474,22 +509,23 @@
     }
 
     .tag:hover {
-      border-color: var(--accent-cyan);
+      border-color: var(--accent-gold);
       color: #ffffff;
     }
 
     /* 3. ACHIEVEMENT */
     .achievement-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
+      width: 100%;
     }
 
     .achieve-badge {
       display: inline-block;
-      background: rgba(168, 85, 247, 0.12);
-      color: #c084fc;
-      border: 1px solid rgba(168, 85, 247, 0.3);
+      background: rgba(52, 211, 153, 0.1);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(52, 211, 153, 0.25);
       font-size: 0.72rem;
       font-weight: 600;
       padding: 4px 10px;
@@ -501,22 +537,22 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: 999px;
       border: 1px solid var(--card-border);
       background: var(--card-inner);
       color: #ffffff;
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
       transition: border-color 0.2s, background 0.2s;
-      margin-top: 16px;
       width: fit-content;
+      max-width: 100%;
     }
 
     .btn-action:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-gold);
+      background: rgba(229, 192, 123, 0.08);
     }
 
     /* 4. CONTACT */
@@ -525,30 +561,35 @@
       grid-template-columns: 1.1fr 1fr;
       gap: 28px;
       align-items: center;
-      padding: 36px;
+      padding: 34px;
     }
 
     .contact-links {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      min-width: 0;
+      width: 100%;
     }
 
     .contact-item {
       background: var(--card-inner);
       border: 1px solid var(--card-border);
-      padding: 12px 16px;
+      padding: 12px 14px;
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 10px;
       text-decoration: none;
       color: #ffffff;
+      min-width: 0;
+      width: 100%;
       transition: border-color 0.2s, transform 0.2s;
     }
 
     .contact-item:hover {
-      border-color: var(--accent-violet);
+      border-color: var(--accent-gold);
       transform: translateX(3px);
     }
 
@@ -556,94 +597,151 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 0;
+      flex: 1;
     }
 
     .contact-item-left i {
       font-size: 1.1rem;
-      color: var(--accent-cyan);
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    .contact-text-wrap {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .contact-value {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      word-break: break-all;
     }
 
     .copy-btn {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--card-border);
       color: var(--text-muted);
       border-radius: 6px;
-      padding: 4px 10px;
+      padding: 5px 10px;
       font-size: 0.72rem;
       cursor: pointer;
+      flex-shrink: 0;
       transition: color 0.2s, border-color 0.2s;
     }
 
     .copy-btn:hover {
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.25);
+      border-color: var(--accent-gold);
     }
 
     .btn-submit {
       width: 100%;
       text-align: center;
-      background: linear-gradient(135deg, #ffffff, #e2e8f0);
-      color: #050508;
+      background: var(--accent-gold);
+      color: #090b10;
       padding: 12px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       text-decoration: none;
       display: block;
-      margin-top: 8px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 6px;
+      transition: transform 0.2s, opacity 0.2s;
     }
 
     .btn-submit:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+      opacity: 0.92;
     }
 
-    /* Footer */
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 36px 20px;
       font-size: 0.78rem;
       color: var(--text-muted);
       border-top: 1px solid var(--card-border);
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .about-bento {
+    /* Responsif Tablet & HP */
+    @media (max-width: 960px) {
+      .bento-profile-horizontal {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
-      .bento-profile {
-        grid-row: auto;
+      .avatar-wrapper {
+        max-width: 280px;
+        height: 300px;
+        margin: 0 auto;
       }
-      .bento-intro, .bento-terminal, .bento-stats {
-        grid-column: span 1;
-      }
-      .capabilities-grid, .contact-container {
+      .edu-grid,
+      .capabilities-grid,
+      .achievement-grid,
+      .contact-container {
         grid-template-columns: 1fr;
       }
       .nav-links {
         display: none;
       }
     }
+
+    @media (max-width: 600px) {
+      body {
+        padding-top: 82px;
+      }
+      .container {
+        padding: 30px 14px;
+      }
+      .section-title {
+        font-size: 1.65rem;
+        margin-bottom: 18px;
+      }
+      .bento-card {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .bento-stats-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .contact-container {
+        padding: 20px 16px;
+        gap: 20px;
+      }
+      .avatar-wrapper {
+        max-width: 100%;
+        height: 270px;
+      }
+      .nav-brand {
+        font-size: 0.75rem;
+        gap: 8px;
+      }
+      .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.74rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Background Dynamic Aurora -->
-  <div class="aurora-container">
-    <div class="aurora-blob blob-violet"></div>
-    <div class="aurora-blob blob-cyan"></div>
-    <div class="aurora-blob blob-emerald"></div>
+  <div class="ambient-light">
+    <div class="light-orb-1"></div>
+    <div class="light-orb-2"></div>
   </div>
   <div class="bg-grid-pattern"></div>
 
-  <!-- Floating Navigation -->
+  <!-- Navigasi -->
   <header class="nav-wrapper">
     <nav class="navbar">
       <div class="nav-brand">
         <span class="nav-brand-badge">R</span>
-        <span>RAFAEL AHMAD DAVINO WIDIYONARKO</span>
+        <span class="nav-brand-name">RAFAEL AHMAD DAVINO WIDIYONARKO</span>
       </div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -655,14 +753,14 @@
     </nav>
   </header>
 
-  <!-- 1. ABOUT ME SECTION -->
+  <!-- 1. ABOUT ME -->
   <section id="about" class="container">
     <p class="section-eyebrow">ABOUT ME</p>
     <h1 class="section-title">Tech Educator & Web Developer</h1>
 
     <div class="about-bento">
-      <!-- Bento 1: Profil Foto & Identitas -->
-      <div class="bento-card bento-profile">
+      <!-- Kartu Utama: Foto di Kiri, Deskripsi & Biodata di Kanan -->
+      <div class="bento-card bento-profile-horizontal">
         <div class="avatar-wrapper">
           <img id="profileImage" class="profile-img" src="profil.jpg" alt="Foto Profil">
           <div class="status-badge">
@@ -671,57 +769,45 @@
           </div>
         </div>
 
-        <div class="info-list">
-          <div class="info-row">
-            <span class="info-label">Nama :</span>
-            <span class="info-val">Rafael Ahmad Davino Widiyonarko</span>
+        <div class="profile-content">
+          <h2 class="profile-greeting">Halo, Saya Rafael Ahmad Davino Widiyonarko</h2>
+          <p class="profile-bio">
+            Mahasiswa S1 Pendidikan Teknologi Informasi di Universitas Negeri Surabaya dengan latar belakang keahlian Teknik Komputer dan Jaringan. Saat ini saya fokus mempelajari pengembangan antarmuka web, logika pemrograman dasar, serta eksplorasi media pembelajaran berbasis teknologi.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Nama Lengkap</span>
+              <span class="info-val">Rafael Ahmad Davino Widiyonarko</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">NIM</span>
+              <span class="info-val">26050974028</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Program Studi</span>
+              <span class="info-val">S1 Pendidikan Teknologi Informasi</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Perguruan Tinggi</span>
+              <span class="info-val">Universitas Negeri Surabaya</span>
+            </div>
           </div>
-          <div class="info-row">
-            <span class="info-label">NIM :</span>
-            <span class="info-val">26050974028</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Prodi :</span>
-            <span class="info-val">S1 Pendidikan Teknologi Informasi</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Kampus :</span>
-            <span class="info-val">Universitas Negeri Surabaya</span>
-          </div>
+
+          <a
+            href="https://drive.google.com/file/d/1FkiW9PBwlYGK-6zKKJ970bm8BpnmzFit/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-action"
+          >
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Unduh Resume / CV</span>
+          </a>
         </div>
       </div>
 
-      <!-- Bento 2: Bio Deskripsi Singkat -->
-      <div class="bento-card bento-intro">
-        <h2 style="font-size: 1.35rem; margin-bottom: 10px; font-weight: 700;">Halo, saya Mahasiswa Pendidikan Teknologi Informasi 👋</h2>
-        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 18px;">
-          Berfokus pada dasar rekayasa perangkat lunak, pengembangan antarmuka web modern, serta eksplorasi teknologi pembelajaran digital. Bersemangat memperdalam logika pemrograman dan aktif berkolaborasi dalam tim.
-        </p>
-        <a href="#contact" class="btn-action">
-          <i class="fa-solid fa-file-arrow-down"></i>
-          <span>Unduh Resume / CV</span>
-        </a>
-      </div>
-
-      <!-- Bento 3: Terminal Card -->
-      <div class="bento-card bento-terminal">
-        <div class="terminal-header">
-          <span class="term-dot term-red"></span>
-          <span class="term-dot term-yellow"></span>
-          <span class="term-dot term-green"></span>
-        </div>
-        <div class="term-text">
-          <p><span class="comment">// developer_profile.json</span></p>
-          <p>{</p>
-          <p>&nbsp;&nbsp;<span class="key">"major"</span>: <span class="val">"Information Technology Education"</span>,</p>
-          <p>&nbsp;&nbsp;<span class="key">"focus"</span>: [<span class="val">"Web Dev"</span>, <span class="val">"EdTech"</span>],</p>
-          <p>&nbsp;&nbsp;<span class="key">"status"</span>: <span class="val">"Ready to Learn"</span></p>
-          <p>}</p>
-        </div>
-      </div>
-
-      <!-- Bento 4: Statistik -->
-      <div class="bento-stats">
+      <!-- Baris Statistik Sejajar 3 Kolom -->
+      <div class="bento-stats-row">
         <div class="stat-box">
           <h3>1</h3>
           <p>Semester</p>
@@ -730,30 +816,64 @@
           <h3>3+</h3>
           <p>Certificates</p>
         </div>
-        <div class="stat-box" style="grid-column: span 2;">
-          <h3 style="background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2030</h3>
+        <div class="stat-box">
+          <h3 style="color: var(--accent-gold);">2030</h3>
           <p>Target Kelulusan</p>
+        </div>
+      </div>
+
+      <!-- Kartu Riwayat Pendidikan -->
+      <div class="bento-card">
+        <div class="edu-header">
+          <div class="edu-header-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700;">Riwayat Pendidikan</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">
+              Perjalanan akademik dari jenjang kejuruan hingga perguruan tinggi
+            </p>
+          </div>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-item">
+            <span class="edu-year">2023 — 2026 • Sekolah Menengah Kejuruan</span>
+            <h4 class="edu-school">SMK Yapalis Krian</h4>
+            <p class="edu-major">Teknik Komputer & Jaringan (TKJ)</p>
+            <p class="edu-desc">
+              Mempelajari fondasi infrastruktur jaringan komputer, perakitan perangkat keras, administrasi server dasar, serta praktik pemecahan masalah teknis berstandar industri.
+            </p>
+          </div>
+
+          <div class="edu-item">
+            <span class="edu-year">2026 — Sekarang • Perguruan Tinggi</span>
+            <h4 class="edu-school">Universitas Negeri Surabaya</h4>
+            <p class="edu-major">S1 Pendidikan Teknologi Informasi</p>
+            <p class="edu-desc">
+              Mendalami pengembangan perangkat lunak, arsitektur web modern, algoritma pemrograman, serta perancangan media dan inovasi teknologi pembelajaran digital (EdTech).
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. WHAT I CAN DO SECTION -->
+  <!-- 2. WHAT I CAN DO -->
   <section id="capabilities" class="container">
     <p class="section-eyebrow">MY CAPABILITIES</p>
     <h2 class="section-title">What I Can Do</h2>
-    <p style="color: var(--text-muted); max-width: 650px; margin-bottom: 22px; font-size: 0.95rem;">
+    <p style="color: var(--text-muted); max-width: 650px; margin-bottom: 22px; font-size: 0.92rem;">
       Kumpulan keahlian teknis dan perangkat lunak yang saya gunakan untuk mengembangkan solusi web yang andal serta media pembelajaran digital yang efektif.
     </p>
 
     <div class="capabilities-grid">
-      <!-- Card Kemampuan 1 -->
       <div class="bento-card">
         <div class="cap-header">
           <span class="cap-num">01</span>
           <div class="cap-icon"><i class="fa-solid fa-code"></i></div>
         </div>
-        <h3 style="font-size: 1.18rem; margin-bottom: 8px;">Web Development & Design</h3>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Web Development & Design</h3>
         <p style="color: var(--text-muted); font-size: 0.88rem;">
           Merancang struktur web yang responsif, membangun antarmuka interaktif yang mudah digunakan, serta memahami dasar pengujian perangkat lunak untuk menjaga performa dan kestabilan sistem.
         </p>
@@ -766,13 +886,12 @@
         </div>
       </div>
 
-      <!-- Card Kemampuan 2 -->
       <div class="bento-card">
         <div class="cap-header">
           <span class="cap-num">02</span>
           <div class="cap-icon"><i class="fa-solid fa-microchip"></i></div>
         </div>
-        <h3 style="font-size: 1.18rem; margin-bottom: 8px;">Problem Solving & AI-Assisted Workflows</h3>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Problem Solving & AI-Assisted Workflows</h3>
         <p style="color: var(--text-muted); font-size: 0.88rem;">
           Menerapkan logika algoritma pemrograman dasar untuk menyelesaikan masalah teknis, serta memanfaatkan tools AI dan teknologi digital untuk meningkatkan efisiensi belajar, riset, dan produktivitas.
         </p>
@@ -787,66 +906,72 @@
     </div>
   </section>
 
-<!-- 3. ACHIEVEMENT SECTION -->
+  <!-- 3. ACHIEVEMENT -->
   <section id="achievement" class="container">
     <p class="section-eyebrow">MILESTONES & AWARDS</p>
     <h2 class="section-title">Achievement</h2>
-    <p style="color: var(--text-muted); max-width: 650px; margin-bottom: 22px; font-size: 0.95rem;">
+    <p style="color: var(--text-muted); max-width: 650px; margin-bottom: 22px; font-size: 0.92rem;">
       Rekam jejak pelatihan, pengalaman praktik kerja, dan sertifikasi kompetensi yang diraih untuk mendukung perkembangan diri dan pengalaman di bidang IT.
     </p>
 
     <div class="achievement-grid">
-      <!-- 1. Tahun 2026: Gemini AI -->
       <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <span class="achieve-badge">2026 • Sertifikasi AI</span>
-          <h3 style="font-size: 1.12rem; margin-bottom: 6px;">Gemini AI Certified Student</h3>
+          <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Gemini AI Certified Student</h3>
           <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 10px;">Penyelenggara: Google for Education</p>
-          <p style="color: #cbd5e1; font-size: 0.86rem;">Menguasai dasar literasi kecerdasan artifisial (AI), perancangan instruksi (prompt) yang efektif, serta pemanfaatan Gemini AI untuk mendukung produktivitas riset dan pembuatan konten edukasi digital.</p>
+          <p style="color: #cbd5e1; font-size: 0.86rem;">
+            Menguasai dasar literasi kecerdasan artifisial (AI), perancangan instruksi (prompt) yang efektif, serta pemanfaatan Gemini AI untuk mendukung produktivitas riset dan pembuatan konten edukasi digital.
+          </p>
         </div>
         <a
           href="https://drive.google.com/file/d/1VGj0r2MNJ-ixK6bRz9hG_lekpQX0wAHD/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="btn-action"
+          style="margin-top: 16px;"
         >
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
           <span>Lihat Bukti Sertifikat</span>
         </a>
       </div>
 
-      <!-- 2. Tahun 2025: Test of English -->
       <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <span class="achieve-badge">2025 • Sertifikasi Bahasa</span>
-          <h3 style="font-size: 1.12rem; margin-bottom: 6px;">Test of English for Communication</h3>
+          <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Test of English for Communication</h3>
           <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 10px;">Penyelenggara: Pusat Bahasa Universitas Negeri Surabaya</p>
-          <p style="color: #cbd5e1; font-size: 0.86rem;">Memvalidasi kompetensi komunikasi aktif dan pasif dalam bahasa Inggris, mendukung kemampuan membaca dokumentasi teknis pemrograman, serta kesiapan kolaborasi akademik.</p>
+          <p style="color: #cbd5e1; font-size: 0.86rem;">
+            Memvalidasi kompetensi komunikasi aktif dan pasif dalam bahasa Inggris, mendukung kemampuan membaca dokumentasi teknis pemrograman, serta kesiapan kolaborasi akademik.
+          </p>
         </div>
         <a
           href="https://drive.google.com/file/d/1ofFYPAxr3tP8RakbX_wUsbA1vNxfoqEj/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="btn-action"
+          style="margin-top: 16px;"
         >
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
           <span>Lihat Bukti Sertifikat</span>
         </a>
       </div>
 
-      <!-- 3. Tahun 2024: Kompetensi TKJ -->
       <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <span class="achieve-badge">2024 • Kompetensi</span>
-          <h3 style="font-size: 1.12rem; margin-bottom: 6px;">Sertifikasi Kompetensi Teknik Komputer & Jaringan</h3>
+          <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Sertifikasi Kompetensi Teknik Komputer & Jaringan</h3>
           <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 10px;">Penyelenggara: SMK Yapalis Krian</p>
-          <p style="color: #cbd5e1; font-size: 0.86rem;">Dinyatakan kompeten dalam uji kompetensi kejuruan yang dinilai langsung oleh industri, menguji kemampuan teknis, perancangan solusi IT, serta penerapan standar profesional kerja.</p>
+          <p style="color: #cbd5e1; font-size: 0.86rem;">
+            Dinyatakan kompeten dalam uji kompetensi kejuruan yang dinilai langsung oleh industri, menguji kemampuan teknis, perancangan solusi IT, serta penerapan standar profesional kerja.
+          </p>
         </div>
         <a
           href="https://drive.google.com/file/d/1wfAFxt0TcERJ0o55Ky6CYePbZchtQiMy/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="btn-action"
+          style="margin-top: 16px;"
         >
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
           <span>Lihat Bukti Sertifikat</span>
@@ -855,98 +980,100 @@
     </div>
   </section>
 
-  <!-- 4. CONTACT SECTION -->
+  <!-- 4. CONTACT -->
   <section id="contact" class="container">
     <div class="bento-card contact-container">
       <div>
         <p class="section-eyebrow">GET IN TOUCH</p>
-        <h2 style="font-size: 2.1rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px;">Let's Work Together</h2>
-        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 22px;">
+        <h2 style="font-size: 1.9rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px;">Let's Work Together</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
           Terbuka untuk diskusi proyek, kolaborasi organisasi, magang, atau sekadar berbagi ide seputar dunia teknologi informatika.
         </p>
-        <a href="mailto:rafaelahmaddavino@gmail.com" class="btn-action">
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaelahmaddavino@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-action"
+        >
           <i class="fa-regular fa-paper-plane"></i>
           <span>Hubungi Saya Sekarang</span>
         </a>
       </div>
 
       <div class="contact-links">
-        <!-- Email Item -->
         <div class="contact-item">
           <div class="contact-item-left">
             <i class="fa-solid fa-envelope"></i>
-            <div>
+            <div class="contact-text-wrap">
               <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Email</div>
-              <span id="emailText" style="font-size: 0.82rem; font-weight: 600;">rafaelahmaddavino@gmail.com</span>
+              <span id="emailText" class="contact-value">rafaelahmaddavino@gmail.com</span>
             </div>
           </div>
           <button class="copy-btn" onclick="copyEmail()">Salin</button>
         </div>
 
-        <!-- GitHub Item -->
-        <a href="https://github.com/rafaelahmad-ai" target="_blank" rel="noopener noreferrer" class="contact-item">
+        <a
+          href="https://github.com/rafaelahmad-ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+        >
           <div class="contact-item-left">
             <i class="fa-brands fa-github"></i>
-            <div>
+            <div class="contact-text-wrap">
               <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">GitHub</div>
-              <span style="font-size: 0.82rem; font-weight: 600;">github.com/rafaelahmad-ai</span>
+              <span class="contact-value">github.com/rafaelahmad-ai</span>
             </div>
           </div>
           <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 0.75rem;"></i>
         </a>
 
-        <!-- LinkedIn Item -->
-        <a href="https://www.linkedin.com/in/rafael-ahmad-davino-420a13440" target="_blank" rel="noopener noreferrer" class="contact-item">
+        <a
+          href="https://www.linkedin.com/in/rafael-ahmad-davino-420a13440"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+        >
           <div class="contact-item-left">
             <i class="fa-brands fa-linkedin"></i>
-            <div>
+            <div class="contact-text-wrap">
               <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">LinkedIn</div>
-              <span style="font-size: 0.82rem; font-weight: 600;">linkedin.com/in/rafaelahmaddavino</span>
+              <span class="contact-value">linkedin.com/in/rafael-ahmad-davino</span>
             </div>
           </div>
           <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 0.75rem;"></i>
         </a>
 
-        <a href="mailto:rafaelahmaddavino@gmail.com" class="btn-submit">
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaelahmaddavino@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-submit"
+        >
           SEND ME A MESSAGE →
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2026 Rafael Ahmad Davino Widiyonarko. All rights reserved.</p>
   </footer>
 
-  <!-- Script Interaktif -->
   <script>
-    // Fallback pas foto jika belum ada file profil.jpg
     const imgElement = document.getElementById('profileImage');
     if (imgElement) {
       imgElement.addEventListener('error', function() {
-        this.src = 'https://via.placeholder.com/400x500/12131a/ffffff?text=Pas+Foto+Mahasiswa';
+        this.src = 'https://via.placeholder.com/400x500/121722/e5c07b?text=Foto+Profil';
       });
     }
 
-    // Fungsi Salin Email
     function copyEmail() {
       const email = document.getElementById('emailText').innerText;
       navigator.clipboard.writeText(email).then(() => {
-        alert('Email berhasil disalin ke clipboard: ' + email);
+        alert('Email berhasil disalin: ' + email);
       });
     }
-
-    // Efek Spotlight Cursor
-    document.querySelectorAll('.bento-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
   </script>
 
 </body>
