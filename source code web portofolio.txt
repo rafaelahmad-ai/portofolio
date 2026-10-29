@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Meta Tags Dasar untuk SEO -->
+  <title>Portofolio | Rafael Ahmad Davino Widiyonarko</title>
+  <meta name="description" content="Portofolio Rafael Ahmad Davino Widiyonarko, Mahasiswa S1 Pendidikan Teknologi Informasi UNESA, berfokus pada Web Development dan Tech Education." />
+  <meta name="keywords" content="Rafael Ahmad Davino, Portofolio, Web Developer, Pendidikan Teknologi Informasi, UNESA, Tech Educator, UI/UX" />
+  <meta name="author" content="Rafael Ahmad Davino Widiyonarko" />
+
+  <!-- Open Graph / Meta Tags Sosial Media (WhatsApp, LinkedIn, Telegram, dll) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rafaelahmad-ai.github.io/portofolio/" /> <!-- Ganti dengan link Anda saat sudah di-hosting -->
+  <meta property="og:title" content="Portofolio | Rafael Ahmad Davino" />
+  <meta property="og:description" content="Tech Educator & Web Developer. Lihat profil, keahlian, dan pencapaian saya di sini." />
+  <meta property="og:image" content="profil.jpg" /> <!-- Gambar yang akan muncul saat link dibagikan -->
+
+  <!-- Favicon Sederhana (Emoji) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <style>
+    /* =========================================
+       TEMA UTAMA (MIDNIGHT TITANIUM - DARK MODE)
+       ========================================= */
+    :root {
+      --bg-gradient: radial-gradient(circle at 0% 0%, #161f2f 0%, #0d1117 40%, #050608 100%);
+      --card-bg: rgba(22, 27, 34, 0.65);
+      --card-inner: rgba(13, 17, 23, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(88, 166, 255, 0.35);
+      --text-main: #f4f4f5;
+      --text-muted: #8b949e;
+      --btn-bg: #ffffff;
+      --btn-text: #060608;
+      --nav-bg: rgba(13, 17, 23, 0.8);
+      
+      --orb-color-1: rgba(88, 166, 255, 0.04);
+      --orb-color-2: rgba(56, 189, 248, 0.03);
+      --grid-pattern: rgba(255, 255, 255, 0.04);
+      --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+
+      /* Scrollbar Dark Mode */
+      --scroll-track: #050608;
+      --scroll-thumb: #1f2937;
+      --scroll-thumb-hover: #374151;
+
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+    }
+
+    /* =========================================
+       TEMA TERANG (LIGHT MODE)
+       ========================================= */
+    body.light-mode {
+      --bg-gradient: radial-gradient(circle at 0% 0%, #ffffff 0%, #f1f5f9 50%, #cbd5e1 100%);
+      --card-bg: rgba(255, 255, 255, 0.7);
+      --card-inner: rgba(255, 255, 255, 0.95);
+      --card-border: rgba(15, 23, 42, 0.12);
+      --card-border-hover: rgba(15, 23, 42, 0.35);
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --btn-bg: #0f172a;
+      --btn-text: #ffffff;
+      --nav-bg: rgba(255, 255, 255, 0.85);
+      
+      --orb-color-1: rgba(56, 189, 248, 0.2); 
+      --orb-color-2: rgba(129, 140, 248, 0.15);
+      --grid-pattern: rgba(15, 23, 42, 0.06);
+      --card-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+
+      /* Scrollbar Light Mode */
+      --scroll-track: #f1f5f9;
+      --scroll-thumb: #cbd5e1;
+      --scroll-thumb-hover: #94a3b8;
+    }
+
+    /* =========================================
+       CUSTOM SCROLLBAR
+       ========================================= */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--scroll-track);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--scroll-thumb);
+      border-radius: 8px;
+      border: 2px solid var(--scroll-track);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--scroll-thumb-hover);
+    }
+
+    /* =========================================
+       RESET & BASE
+       ========================================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-main);
+      padding-top: 96px;
+      position: relative;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    /* Cahaya Latar Monokrom Halus */
+    .ambient-light {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .light-orb-1 {
+      position: absolute;
+      width: 620px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--orb-color-1) 0%, transparent 70%);
+      top: -120px;
+      left: 12%;
+      filter: blur(90px);
+      transition: background 0.4s ease;
+    }
+
+    .light-orb-2 {
+      position: absolute;
+      width: 560px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--orb-color-2) 0%, transparent 70%);
+      bottom: -100px;
+      right: 12%;
+      filter: blur(100px);
+      transition: background 0.4s ease;
+    }
+
+    .bg-grid-pattern {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(var(--grid-pattern) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.8;
+      z-index: -1;
+      pointer-events: none;
+      transition: background-image 0.4s ease;
+    }
+
+    /* Navigasi */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      padding: 0 14px;
+    }
+
+    .navbar {
+      background: var(--nav-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 14px 8px 12px;
+      max-width: 890px;
+      width: 100%;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      letter-spacing: 0.4px;
+      min-width: 0;
+      flex: 1;
+      color: var(--text-main);
+    }
+
+    .nav-brand-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-brand-badge {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.82rem;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-shrink: 0;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    /* Indikator Titik Active Nav */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 4px;
+      height: 4px;
+      background-color: var(--text-main);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    .nav-links a.active::after {
+      transform: translateX(-50%) scale(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: var(--card-inner);
+      border-color: var(--card-border-hover);
+      transform: translateY(-2px);
+    }
+
+    .nav-btn {
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s, background 0.4s, color 0.4s;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 44px 20px;
+      width: 100%;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 2.15rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+      word-wrap: break-word;
+    }
+
+    /* Animasi Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal.delay-1 { transition-delay: 0.1s; }
+    .reveal.delay-2 { transition-delay: 0.2s; }
+    .reveal.delay-3 { transition-delay: 0.3s; }
+
+    /* Kartu Bento Monokrom */
+    .bento-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+      width: 100%;
+      transition: border-color 0.4s, transform 0.4s, background 0.4s, box-shadow 0.4s;
+      box-shadow: var(--card-shadow);
+    }
+
+    .bento-card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px); 
+    }
+
+    /* 1. ABOUT ME */
+    .about-bento {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .bento-profile-horizontal {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: var(--card-inner);
+      filter: grayscale(100%) contrast(1.1); 
+      transition: filter 0.6s ease, transform 0.6s ease;
+    }
+
+    .avatar-wrapper:hover .profile-img {
+      filter: grayscale(0%) contrast(1); 
+      transform: scale(1.05); 
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      padding: 5px 12px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-main);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.85);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .profile-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .profile-greeting {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .profile-bio {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-val {
+      color: var(--text-main);
+      font-size: 0.86rem;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .bento-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .stat-box {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      transition: border-color 0.25s, transform 0.25s, background 0.4s;
+    }
+
+    .stat-box:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-2px);
+    }
+
+    .stat-box h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .stat-box p {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 6px;
+      letter-spacing: 0.8px;
+    }
+
+    /* Riwayat Pendidikan */
+    .edu-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .edu-header-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      font-size: 1rem;
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .edu-item {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: border-color 0.25s, background 0.4s;
+    }
+
+    .edu-item:hover {
+      border-color: var(--card-border-hover);
+    }
+
+    .edu-year {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-main);
+      background: var(--card-border);
+      border: 1px solid var(--card-border-hover);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .edu-school {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .edu-major {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .edu-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* 2. WHAT I CAN DO */
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .cap-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .cap-num {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .cap-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      font-size: 1.05rem;
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: var(--card-inner);
+      color: var(--text-main);
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      transition: border-color 0.2s, color 0.2s, background 0.4s;
+    }
+
+    .tag:hover {
+      border-color: var(--text-main);
+    }
+
+    /* 3. ACHIEVEMENT */
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .achieve-badge {
+      display: inline-block;
+      background: var(--card-border);
+      color: var(--text-main);
+      border: 1px solid var(--card-border-hover);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      background: var(--card-inner);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .btn-action:hover {
+      border-color: var(--text-main);
+      background: var(--card-border);
+    }
+
+    /* 4. CONTACT */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .contact-item {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      padding: 12px 14px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+      min-width: 0;
+      width: 100%;
+      transition: border-color 0.2s, transform 0.2s, background 0.4s;
+    }
+
+    .contact-item:hover {
+      border-color: var(--text-main);
+      transform: translateX(3px);
+    }
+
+    .contact-item-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .contact-item-left i {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      flex-shrink: 0;
+    }
+
+    .contact-text-wrap {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .contact-value {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      background: var(--card-border);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .copy-btn:hover {
+      border-color: var(--text-main);
+    }
+
+    .btn-submit {
+      width: 100%;
+      text-align: center;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: block;
+      margin-top: 6px;
+      transition: transform 0.2s, opacity 0.2s, background 0.4s, color 0.4s;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Tombol Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+      box-shadow: var(--card-shadow);
+    }
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: var(--card-inner);
+      border-color: var(--text-main);
+      transform: translateY(-4px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      transition: border-color 0.4s;
+    }
+
+    /* Responsif Tablet & HP */
+    @media (max-width: 960px) {
+      .bento-profile-horizontal {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .avatar-wrapper {
+        max-width: 280px;
+        height: 300px;
+        margin: 0 auto;
+      }
+      .edu-grid,
+      .capabilities-grid,
+      .achievement-grid,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-top: 82px;
+      }
+      .container {
+        padding: 30px 14px;
+      }
+      .section-title {
+        font-size: 1.65rem;
+        margin-bottom: 18px;
+      }
+      .bento-card {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .bento-stats-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .contact-container {
+        padding: 20px 16px;
+        gap: 20px;
+      }
+      .avatar-wrapper {
+        max-width: 100%;
+        height: 270px;
+      }
+      .nav-brand {
+        font-size: 0.75rem;
+        gap: 8px;
+      }
+      .nav-actions {
+        gap: 8px;
+      }
+      .theme-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+      }
+      .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.74rem;
+      }
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-light">
+    <div class="light-orb-1"></div>
+    <div class="light-orb-2"></div>
+  </div>
+  <div class="bg-grid-pattern"></div>
+
+  <!-- Navigasi -->
+  <header class="nav-wrapper">
+    <nav class="navbar">
+      <div class="nav-brand">
+        <span class="nav-brand-badge">R</span>
+        <span class="nav-brand-name">RAFAEL AHMAD DAVINO WIDIYONARKO</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-item active">About</a></li>
+        <li><a href="#capabilities" class="nav-item">What I Can Do</a></li>
+        <li><a href="#achievement" class="nav-item">Achievement</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <!-- Tombol Light/Dark Mode -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#contact" class="nav-btn">Hire Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 1. ABOUT ME -->
+  <section id="about" class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">ABOUT ME</p>
+      <h1 class="section-title">Tech Educator & Web Developer</h1>
+    </div>
+
+    <div class="about-bento">
+      <!-- Kartu Profil Menyamping -->
+      <div class="bento-card bento-profile-horizontal reveal delay-1">
+        <div class="avatar-wrapper">
+          <img id="profileImage" class="profile-img" src="profil.png" alt="Foto Profil">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span>Open to Collaborate</span>
+          </div>
+        </div>
+
+        <div class="profile-content">
+          <h2 class="profile-greeting">Halo, Saya Rafael Ahmad Davino Widiyonarko</h2>
+          <p class="profile-bio">
+            Mahasiswa S1 Pendidikan Teknologi Informasi di Universitas Negeri Surabaya dengan latar belakang keahlian Teknik Komputer dan Jaringan. Saat ini saya fokus mempelajari pengembangan antarmuka web, logika pemrograman dasar, serta eksplorasi media pembelajaran berbasis teknologi.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Nama Lengkap</span>
+              <span class="info-val">Rafael Ahmad Davino Widiyonarko</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">NIM</span>
+              <span class="info-val">26050974028</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Program Studi</span>
+              <span class="info-val">S1 Pendidikan Teknologi Informasi</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Perguruan Tinggi</span>
+              <span class="info-val">Universitas Negeri Surabaya</span>
+            </div>
+          </div>
+
+          <a
+            href="https://drive.google.com/file/d/1FkiW9PBwlYGK-6zKKJ970bm8BpnmzFit/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-action"
+          >
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Unduh Resume / CV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Baris Statistik Sejajar 3 Kolom -->
+      <div class="bento-stats-row reveal delay-2">
+        <div class="stat-box">
+          <h3>1</h3>
+          <p>Semester</p>
+        </div>
+        <div class="stat-box">
+          <h3>3+</h3>
+          <p>Certificates</p>
+        </div>
+        <div class="stat-box">
+          <h3>2030</h3>
+          <p>Target Kelulusan</p>
+        </div>
+      </div>
+
+      <!-- Kartu Riwayat Pendidikan -->
+      <div class="bento-card reveal delay-3">
+        <div class="edu-header">
+          <div class="edu-header-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700;">Riwayat Pendidikan</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">
+              Perjalanan akademik dari jenjang kejuruan hingga perguruan tinggi
+            </p>
+          </div>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-item">
+            <span class="edu-year">2023 — 2026 • Sekolah Menengah Kejuruan</span>
+            <h4 class="edu-school">SMK Yapalis Krian</h4>
+            <p class="edu-major">Teknik Komputer & Jaringan (TKJ)</p>
+            <p class="edu-desc">
+              Mempelajari fondasi infrastruktur jaringan komputer, perakitan perangkat keras, administrasi server dasar, serta praktik pemecahan masalah teknis berstandar industri.
+            </p>
+          </div>
+
+          <div class="edu-item">
+            <span class="edu-year">2026 — Sekarang • Perguruan Tinggi</span>
+            <h4 class="edu-school">Universitas Negeri Surabaya</h4>
+            <p class="edu-major">S1 Pendidikan Teknologi Informasi</p>
+            <p class="edu-desc">
+              Mendalami pengembangan perangkat lunak, arsitektur web modern, algoritma pemrograman, serta perancangan media dan inovasi teknologi pembelajaran digital (EdTech).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WHAT I CAN DO -->
+  <section id="capabilities" class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">MY CAPABILITIES</p>
+      <h2 class="section-title">What I Can Do</h2>
+      <p style="color: var(--text-muted); max-width: 650px; margin-bottom: 22px; font-size: 0.92rem;">
+        Kumpulan keahlian teknis dan perangkat lunak yang saya gunakan untuk mengembangkan solusi web yang andal serta media pembelajaran digital yang efektif.
+      </p>
+    </div>
+
+    <div class="capabilities-grid">
+      <div class="bento-card reveal delay-1">
+        <div class="cap-header">
+          <span class="cap-num">01</span>
+          <div class="cap-icon"><i class="fa-solid fa-code"></i></div>
+        </div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Web Development & Design</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">
+          Merancang struktur web yang responsif, membangun antarmuka interaktif yang mudah digunakan, serta memahami dasar pengujian perangkat lunak untuk menjaga performa dan kestabilan sistem.
+        </p>
+        <div class="tag-cloud">
+          <span class="tag">HTML5 & CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Responsive Layout</span>
+          <span class="tag">Git & GitHub</span>
+          <span class="tag">VS Code</span>
+        </div>
+      </div>
+
+      <div class="bento-card reveal delay-2">
+        <div class="cap-header">
+          <span class="cap-num">02</span>
+          <div class="cap-icon"><i class="fa-solid fa-microchip"></i></div>
+        </div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Problem Solving & AI-Assisted Workflows</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">
+          Menerapkan logika algoritma pemrograman dasar untuk menyelesaikan masalah teknis, serta memanfaatkan tools AI dan teknologi digital untuk meningkatkan efisiensi belajar, riset, dan produktivitas.
+        </p>
+        <div class="tag-cloud">
+          <span class="tag">Python / C++</span>
+          <span class="tag">Algorithm</span>
+          <span class="tag">AI Tools (Gemini AI, Claude)</span>
+          <span class="tag">Documentation</span>
+          <span class="tag">UI/UX Basics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ACHIEVEMENT -->
+  <section id="achievement" class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">MILESTONES & AWARDS</p>
+      <h2 class="section-title">Achievement</h2>
+      <p style="color: var(--text-muted); max-width: 650px; margin-bottom: 22px; font-size: 0.92rem;">
+        Rekam jejak pelatihan, pengalaman praktik kerja, dan sertifikasi kompetensi yang diraih untuk mendukung perkembangan diri dan pengalaman di bidang IT.
+      </p>
+    </div>
+
+    <div class="achievement-grid">
+      <div class="bento-card reveal delay-1" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="achieve-badge">2026 • Sertifikasi AI</span>
+          <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Gemini AI Certified Student</h3>
+          <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 10px;">Penyelenggara: Google for Education</p>
+          <p style="color: var(--text-main); font-size: 0.86rem; opacity: 0.85;">
+            Menguasai dasar literasi kecerdasan artifisial (AI), perancangan instruksi (prompt) yang efektif, serta pemanfaatan Gemini AI untuk mendukung produktivitas riset dan pembuatan konten edukasi digital.
+          </p>
+        </div>
+        <a
+          href="https://drive.google.com/file/d/1VGj0r2MNJ-ixK6bRz9hG_lekpQX0wAHD/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-action"
+          style="margin-top: 16px;"
+        >
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Lihat Bukti Sertifikat</span>
+        </a>
+      </div>
+
+      <div class="bento-card reveal delay-2" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="achieve-badge">2025 • Sertifikasi Bahasa</span>
+          <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Test of English for Communication</h3>
+          <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 10px;">Penyelenggara: Pusat Bahasa Universitas Negeri Surabaya</p>
+          <p style="color: var(--text-main); font-size: 0.86rem; opacity: 0.85;">
+            Memvalidasi kompetensi komunikasi aktif dan pasif dalam bahasa Inggris, mendukung kemampuan membaca dokumentasi teknis pemrograman, serta kesiapan kolaborasi akademik.
+          </p>
+        </div>
+        <a
+          href="https://drive.google.com/file/d/1ofFYPAxr3tP8RakbX_wUsbA1vNxfoqEj/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-action"
+          style="margin-top: 16px;"
+        >
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Lihat Bukti Sertifikat</span>
+        </a>
+      </div>
+
+      <div class="bento-card reveal delay-3" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="achieve-badge">2024 • Kompetensi</span>
+          <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Sertifikasi Kompetensi Teknik Komputer & Jaringan</h3>
+          <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 10px;">Penyelenggara: SMK Yapalis Krian</p>
+          <p style="color: var(--text-main); font-size: 0.86rem; opacity: 0.85;">
+            Dinyatakan kompeten dalam uji kompetensi kejuruan yang dinilai langsung oleh industri, menguji kemampuan teknis, perancangan solusi IT, serta penerapan standar profesional kerja.
+          </p>
+        </div>
+        <a
+          href="https://drive.google.com/file/d/1wfAFxt0TcERJ0o55Ky6CYePbZchtQiMy/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-action"
+          style="margin-top: 16px;"
+        >
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Lihat Bukti Sertifikat</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CONTACT -->
+  <section id="contact" class="container">
+    <div class="bento-card contact-container reveal">
+      <div>
+        <p class="section-eyebrow">GET IN TOUCH</p>
+        <h2 style="font-size: 1.9rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px;">Let's Work Together</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+          Terbuka untuk diskusi proyek, kolaborasi organisasi, magang, atau sekadar berbagi ide seputar dunia teknologi informatika.
+        </p>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaelahmaddavino@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-action"
+        >
+          <i class="fa-regular fa-paper-plane"></i>
+          <span>Hubungi Saya Sekarang</span>
+        </a>
+      </div>
+
+      <div class="contact-links">
+        <div class="contact-item">
+          <div class="contact-item-left">
+            <i class="fa-solid fa-envelope"></i>
+            <div class="contact-text-wrap">
+              <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Email</div>
+              <span id="emailText" class="contact-value">rafaelahmaddavino@gmail.com</span>
+            </div>
+          </div>
+          <button class="copy-btn" onclick="copyEmail()">Salin</button>
+        </div>
+
+        <a
+          href="https://github.com/rafaelahmad-ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+        >
+          <div class="contact-item-left">
+            <i class="fa-brands fa-github"></i>
+            <div class="contact-text-wrap">
+              <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">GitHub</div>
+              <span class="contact-value">github.com/rafaelahmad-ai</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 0.75rem;"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/rafael-ahmad-davino-420a13440"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+        >
+          <div class="contact-item-left">
+            <i class="fa-brands fa-linkedin"></i>
+            <div class="contact-text-wrap">
+              <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">LinkedIn</div>
+              <span class="contact-value">linkedin.com/in/rafael-ahmad-davino</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 0.75rem;"></i>
+        </a>
+
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaelahmaddavino@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-submit"
+        >
+          SEND ME A MESSAGE →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Rafael Ahmad Davino Widiyonarko. All rights reserved.</p>
+  </footer>
+
+  <!-- Tombol Back To Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // --- 1. Fallback Image Profil ---
+    const imgElement = document.getElementById('profileImage');
+    if (imgElement) {
+      imgElement.addEventListener('error', function() {
+        this.src = 'https://via.placeholder.com/400x500/101014/ffffff?text=Foto+Profil';
+      });
+    }
+
+    // --- 2. Salin Email ---
+    function copyEmail() {
+      const email = document.getElementById('emailText').innerText;
+      navigator.clipboard.writeText(email).then(() => {
+        alert('Email berhasil disalin: ' + email);
+      });
+    }
+
+    // --- 3. Mode Terang/Gelap Toggle ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = themeToggleBtn.querySelector('i');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const isLightMode = document.body.classList.contains('light-mode');
+      
+      if (isLightMode) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('portfolio-theme', 'light');
+      } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('portfolio-theme', 'dark');
+      }
+    });
+
+    // --- 4. Animasi Scroll Reveal ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // --- 5. Scroll Spy untuk Indikator Navbar ---
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').includes(current)) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // --- 6. Tombol Back to Top ---
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
